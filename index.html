@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street View Driving Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">
+            <p>• Enter any city or address and drive around.</p>
+            <p>• Drag and drop the marker to adjust your location.</p>
+            <p>• The Forward and Reverse buttons move a small step.</p>
+            <p>• The Left and Right buttons rotate the view slightly.</p>
+        </div>
+
+        <div class="controls">
+            <div class="location-controls">
+                <div class="control-group">
+                    <label for="address-input">Enter location</label>
+                    <input type="text" id="address-input" placeholder="Enter a city or address">
+                </div>
+            </div>
+
+            <div class="driving-controls">
+                <button id="forward-btn" class="control-btn">Forward</button>
+                <div class="direction-controls">
+                    <button id="left-btn" class="control-btn">Left</button>
+                    <button id="reverse-btn" class="control-btn brake">Reverse</button>
+                    <button id="right-btn" class="control-btn">Right</button>
+                </div>
+            </div>
+
+            <div class="status">
+                <div class="status-item">
+                    <span class="label">Direction:</span>
+                    <span id="direction-display" class="value">0°</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="street-view-container">
+                <div id="street-view"></div>
+                <div class="street-view-overlay">
+                    <div class="location-info">
+                        <div id="location-text">1198 NE 2nd Ave<br>Miami, Florida</div>
+                        <div class="navigation-info">Powered by Google Maps</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="map-view-btn" class="map-control active">Map</button>
+                    <button id="satellite-view-btn" class="map-control">Satellite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=weekly&libraries=places,geometry&loading=async&callback=initMap"></script>
+</body>
+</html>
