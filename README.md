@@ -1,3 +1,9 @@
+# Notice
+
+The live demo is currently taken down to the cost of Google Maps API.
+Feel free to clone this project and use your own Google Maps API key
+---
+
 # Street View Driving Simulation
 
 A web-based driving simulation using Google Street View that lets you explore cities and addresses around the world with keyboard controls.
