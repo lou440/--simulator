@@ -1,111 +1,129 @@
-# Notice
+#通知
 
-The live demo is currently taken down to the cost of Google Maps API.
-Feel free to clone this project and use your own Google Maps API key
+現場演示目前被降低到谷歌地圖API的成本。
+
+隨時克隆此專案，並使用您自己的谷歌地圖API金鑰
+
 ---
 
-# Street View Driving Simulation
+#街景駕駛模擬
 
-A web-based driving simulation using Google Street View that lets you explore cities and addresses around the world with keyboard controls.
+使用谷歌街景的基於網路的駕駛模擬，允許您使用鍵盤控制元件探索世界各地的城市和地址。
 
-## Features
+##功能
 
-- **Street View Integration**: Real Google Street View panoramas for authentic driving experience
-- **Multiple Control Methods**: 
-  - WASD keys (W=Accelerate, S=Brake, A=Left, D=Right)
-  - Arrow keys (Up=Accelerate, Down=Brake, Left=Left, Right=Right)
-  - On-screen buttons for touch devices
-- **Address Search**: Enter any address to drive there with modern Places predictions
-- **Real-time Display**: Speed and direction indicators
-- **Map Integration**: Side-by-side map view with satellite/roadmap toggle
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **街景整合**：真正的谷歌街景全景，提供真實的駕駛體驗
 
-## Setup Instructions
+- **多種控制方法**：
 
-1. **Get a Google Maps API Key**:
-   - Go to the [Google Cloud Console](https://console.cloud.google.com/)
-   - Create a new project or select an existing one
-   - Enable the following APIs:
-     - Maps JavaScript API
-     - Street View Static API
-     - Geocoding API
-     - Places API
-   - Create credentials (API Key)
-   - Restrict the API key to your domain for security
+- WASD鍵（W=Accelerate，S=Brake，A=左，D=右）
 
-2. **Configure the API Key**:
-   - Open `index.html`
-   - Replace `YOUR_API_KEY` with your actual Google Maps API key:
-   ```html
-   <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=weekly&callback=initMap"></script>
-   ```
-   - Note: We intentionally omit `libraries=places` because the modern Places library is served automatically with the core loader when needed. `v=weekly` ensures you get the latest non-breaking updates.
+-箭頭鍵（上=Accelerate，下=Brake，左=左，右=右）
 
-3. **Run the Application**:
-   - Simply open `index.html` in a web browser
-   - Or serve it using a local web server:
-   ```bash
-   # Using Python 3
-   python -m http.server 8000
-   
-   # Using Node.js (if you have http-server installed)
-   npx http-server
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
+-觸控裝置的螢幕按鈕
 
-## Usage
+- **地址搜尋**：輸入任何地址，用現代地點預測開車去那裡
 
-### Keyboard Controls
-- **W** or **↑**: Accelerate
-- **S** or **↓**: Brake
-- **A** or **←**: Turn left
-- **D** or **→**: Turn right
+- **實時顯示**：速度和方向指示器
 
-### Mouse/Touch Controls
-- Use the on-screen buttons for accelerate, brake, left, and right
-- Enter addresses in the search field and press Enter
-- Toggle between Map and Satellite views
+- **地圖整合**：帶有衛星/路線圖託格的並排地圖檢視
 
-### Navigation
-1. Type an address and pick a suggestion, or press Enter to geocode
-2. Use keyboard keys or on-screen buttons to control movement
-3. Watch the speed and direction indicators in the top-right
-4. The map on the right shows your current location and surroundings
+- **響應式設計**：適用於桌面、平板電腦和移動裝置
 
-## File Structure
+##設定說明
+
+1. **獲取谷歌地圖API金鑰**：
+
+-轉到[谷歌雲控制檯]（https://console.cloud.google.com/）
+
+-建立新專案或選擇現有專案
+
+-啟用以下API：
+
+-地圖JavaScript API
+
+-街景靜態API
+
+-地理編碼API
+
+-地方API
+
+-建立憑證（API金鑰）
+
+-為了安全，將API金鑰限制在您的域
+
+2. **配置API金鑰**：
+
+-開啟`index.html`
+
+-將“YOUR_API_KEY”替換為實際的谷歌地圖API金鑰：
+
+```html
+
+<script async defer src="https://maps.googleapis.com/maps/api/js? key=YOUR_API_KEY&v=weekly&callback=initMap"></script>
 
 ```
-street-view-driving-simulation/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styling
-├── script.js           # JavaScript functionality
-└── README.md           # This file
+
+-注意：我們故意省略“libraries=places”，因為現代Places庫在需要時會自動與核心載入器一起提供。“v=weekly”確保您獲得最新的不間斷續續更新。
+
+3. **執行應用程式**：
+
+-只需在網頁瀏覽器中開啟“index.html”
+
+-或使用本地Web伺服器提供服務：
+
+```bash
+
+#使用Python 3
+
+Python-m http.server 8000
+
+#使用 Node.js（如果您已安裝 http 伺服器）
+
+Npx http-server
+
+#使用PHP
+
+Php -S localhost:8000
+
 ```
 
-## Browser Compatibility
+##用法
 
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
+###鍵盤控制
 
-## Notes
+- **W**或**↑**：Accelerate
 
-- The simulation uses Google Street View data, so driving is limited to areas with Street View coverage
-- Movement speed and physics are simplified for a smooth experience
-- The application requires an active internet connection to load Street View data
-- Some areas may have limited or no Street View coverage
+- **S**或**↓**：剎車
 
-## Troubleshooting
+- **A**或**←**：左轉
 
-- If you see a "This page can't load Google Maps correctly" modal, your API key is missing, restricted, or billing is not enabled. Verify:
-  - Billing is enabled on the project
-  - The key is unrestricted for `http://localhost` during development or properly restricted to your domain
-  - The following APIs are enabled: Maps JavaScript, Street View Static, Geocoding, Places
-- If Autocomplete suggestions do not appear, check the browser console for Places API errors and confirm Places API is enabled.
+- **D**或**→**：右轉
 
-## Inspiration
+###滑鼠/觸控控制
 
-Based on the original Street View Driver concept from MapChannels, enhanced with keyboard controls and modern web technologies.
+-使用螢幕上的按鈕進行加速、剎車、左和右
+
+-在搜尋欄位中輸入地址，然後按回車鍵
+
+-在地圖和衛星檢視之間切換
+
+###導航
+
+1. 鍵入地址並選擇一個建議，或按回車鍵進行地理編碼
+
+2. 使用鍵盤鍵或螢幕上的按鈕來控制移動
+
+3. 觀看右上角的速度和方向指示器
+
+4. 右側的地圖顯示了您當前的位置和周圍環境
+
+##檔案結構
+
+```
+
+街景駕駛模擬/
+
+├── index.html # 主 HTML 檔案
+
+├── styles.css # CSS 造型
